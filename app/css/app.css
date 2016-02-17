@@ -1,0 +1,372 @@
+@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic|Great+Vibes);
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+i.fa.fa-plus.icon, i.fa.fa-trash-o.icon {
+  font-size: 2em;
+  margin-left: 0.5em;
+}
+
+i.fa.fa-pause {
+  margin-left: 1em;
+}
+
+.edit-in-place span {
+  cursor: pointer;
+}
+
+.edit-in-place input {
+  display: none;
+  color: #2d2e2f;
+}
+
+.edit-in-place.active span {
+  display: none;
+}
+
+.edit-in-place.active input {
+  display: inline-block;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  background: #f7f7f7;
+  background-size: cover;
+  font-family: HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.container {
+  width: 600px;
+  margin: 0 auto;
+  padding: 50px 0;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.row {
+  display: block;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  clear: both;
+  overflow: hidden;
+}
+
+h1, a {
+  font-family: serif;
+  color: #4C4C4C;
+  text-align: center;
+  font-weight: 400;
+  margin: 0;
+  padding-bottom: 1em;
+}
+
+.red {
+  color: #DA3512;
+}
+
+.fancy {
+  font-family: "Great Vibes", cursive;
+  font-size: 1.8em;
+}
+
+.enterNew {
+  height: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+input[type="text"],
+select {
+  height: 90%;
+  width: 100%;
+  padding: 0 20px;
+  position: absolute;
+  top: 0;
+  vertical-align: middle;
+  display: inline-block;
+  border: none;
+  border-radius: none;
+  font-size: 13px;
+  color: #777;
+  margin: 0;
+  font-family: HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  ;
+    font-weight: 600;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  background: transparent;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='url'],
+textarea {
+  height: 100%;
+  width: 100%;
+  background: rgba(51, 51, 51, 0.72);
+  color: #fff;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 2px;
+}
+
+input[type='text']:hover,
+input[type='email']:hover,
+input[type='url']:hover,
+textarea:hover {
+  cursor: text;
+}
+
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='url']:focus,
+textarea:focus {
+  background: rgba(51, 51, 51, 0.72);
+  color: #fff;
+}
+
+button {
+  font-family: HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  background: transparent;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  height: 50px;
+  width: 150px;
+  font-size: 1em;
+  color: #f7f7f7;
+  cursor: pointer;
+  text-transform: uppercase;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.icon {
+  position: absolute;
+  top: 30%;
+  left: 10px;
+  font-size: 20px;
+}
+
+.edit-in-place.active input {
+  background: #d9d9d9;
+  color: rgba(51, 51, 51, 0.72);
+}
+
+.addTask {
+  background: rgba(133, 171, 56, 0.8);
+  padding-left: 30px;
+  margin-left: 15px;
+}
+
+.addTask:hover {
+  background: #85AB38;
+}
+
+.removeTask {
+  background: rgba(220, 137, 10, 0.7);
+  padding-left: 30px;
+  margin-left: 0.5em;
+}
+
+.removeTask:hover {
+  background: rgba(220, 137, 10, 1.0);
+}
+
+.updateTask {
+  background: rgba(182, 28, 12, 0.8);
+  width: 50px;
+  height: 20px;
+  font-size: 10px;
+  float: right;
+  margin-right: 5px;
+}
+
+.updateTask:hover {
+  background: #B61C0C;
+}
+
+#colors {
+  margin-left: 20px;
+  color: #999;
+}
+
+.pomodoros {
+  background: rgba(182, 28, 12, 0.8);
+  width: 100px;
+  height: 20px;
+  font-size: 10px;
+  float: right;
+}
+
+.pomodoros:hover {
+  background: #B61C0C;
+}
+
+.addPomodoro {
+  background: rgba(133, 171, 56, 0.8);
+  width: 160px;
+  height: 30px;
+  margin-left: 41%;
+  margin-bottom: 10px;
+}
+
+.grey {
+  margin-top: 10px;
+  font-family: "Great Vibes", cursive;
+  color: #999999;
+}
+
+#back {
+  background: rgba(133, 171, 56, 0.8);
+  width: 160px;
+  height: 30px;
+  float: left;
+  margin-left: 15px;
+  position: absolute;
+  margin-top: -40px;
+  float: left;
+}
+
+#back:hover {
+  background: #85AB38;
+}
+
+#newPomodoro {
+  margin-left: 5px;
+}
+
+.addPomodoro:hover {
+  background: #85AB38;
+}
+
+.times {
+  font-size: 16px;
+  display: inline;
+  color: #545454;
+  height: 5px !important;
+  line-height: 0px;
+}
+
+.center {
+  text-align: center;
+  display: block;
+}
+
+.play {
+  background: #828282;
+  width: 40px;
+  height: 20px;
+  font-size: 10px;
+  display: inline;
+  margin: -90px 0 0 280px;
+  position: absolute;
+}
+
+#stop {
+  background: #828282;
+  width: 70px;
+  height: 20px;
+  font-size: 10px;
+  display: inline;
+  margin: -55px 0 0 265px;
+  position: absolute;
+}
+
+.disabled {
+  opacity: 0.4;
+}
+.hide{
+  display: none;
+}
+
+path {
+  margin-left: 50%;
+}
+
+circle {
+  fill: #b61c0c;
+}
+
+text {
+  text-align: center;
+  font-size: 32px;
+  fill: #000000;
+  font-weight: 700;
+}
+
+.play:hover {
+  background: #656565;
+}
+
+.todoList {
+  list-style: none;
+  padding: 0 20px;
+}
+
+.task {
+  border-top: 1px solid #e5e5e5;
+  padding: 15px 0;
+  color: #545454;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.todoList .task:nth-child(even) {
+  background: transparent;
+}
+
+.check {
+  margin-right: 1em;
+}
+
+.check {
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  display: inline-block;
+  cursor: pointer;
+  width: 19px;
+  height: 19px;
+  vertical-align: middle;
+}
+
+.check:focus {
+  outline: none;
+}
+
+.check:before,
+.check:checked:before {
+  font-family: 'FontAwesome';
+  color: #2d2e2f;
+  font-size: 20px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.check:before {
+  content: '\f096';
+  color: rgb(220, 137, 10);
+}
+
+.check:checked:before {
+  content: '\f14a';
+  color: #85AB38;
+}

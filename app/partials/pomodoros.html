@@ -1,0 +1,40 @@
+<div ng-app="todoApp">
+  <div class="container">
+    <a id="backLink" href="#/todos">
+      <button id="back"><i class="fa fa-arrow-left"></i><span id="newPomodoro">Back to list</span>
+      </button>
+    </a>
+
+    <div class="content" ng-controller="toDoCtrl" data-ng-init="pomodoroList()">
+      <h1 class="grey">{{taskName}}</span></h1>
+      <svg width="100%" height="230px">
+        <circle cx=50% cy=50% r=100/>
+        <path fill="#85ab38" transform="translate(250, -16) scale(2)" d="M 11,27 c 6,-10 17,-7 20,-10 c 0,7 5,4 8,7 c 3,4 4,11 8,13 c -4,-8 2,-8 -6,-18 c 5,3 7,-0 13,3 c -5,-9 -14,-6 -14,-6 s 5,-5 10,-2 c -5,-7 -18,2 -18,2 s -6,-10 -17,0.5 c 7,-3 15,0 15,0 S 16,11 11,27z" />
+        <text x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">{{timeRemaining}}</text>
+        <text x="50%" y="70%" text-anchor="middle" alignment-baseline="middle">{{timerCompleted}}</text>
+      </svg>
+      <button id="play" class="play hide" ng-click="toggleTimer()"><i class="fa fa-play icon"></i><i class="fa fa-pause icon"></i></button>
+      <button id="stop" class="hide" ng-controller="toDoCtrl" ng-click="stop()">silence!</button>
+      <div class="timer">
+        <table>
+          <tr>
+            <td><span id="colors">Select a pomodoro and watch the timer change colors!</span>
+            </td>
+            <td>
+              <button id="addPomodoro" class="addPomodoro" ng-click="newPomodoro(pomodoro)"><i class="fa fa-plus"></i><span id="newPomodoro">New Pomodoro</span>
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <ul class="todoList">
+        <li class="task center" data-ng-repeat="pomodoro in pomodoros track by $index">
+          <button class="times" ng-click="setTimer(pomodoro, $index, pomodoros)">{{pomodoro}}</button>
+        </li>
+      </ul>
+      <audio id="alarm" width="0" height="0" loop="false">
+        <source src="audio/alarm.wav" type="audio/wav">
+      </audio>
+    </div>
+  </div>
+</div>

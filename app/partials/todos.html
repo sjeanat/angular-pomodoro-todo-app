@@ -1,0 +1,32 @@
+<div ng-app="todoApp">
+  <div class="container">
+    <div class="content" ng-controller="toDoCtrl">
+      <h1>MY <span class="fancy red">pomodoro</span> TODO LIST</h1>
+      <form>
+        <div class="enterNew">
+          <input id="enterTodo" type="text" placeholder="Enter a new task..." ng-model="todoEntered" ng-model-instant>
+        </div>
+        <div class="row">
+          <button class="addTask" ng-click="addTodo()"><i class="fa fa-plus icon"></i>Add New
+            <br>Task</button>
+          <button class="removeTask" ng-click="removeComplete()"><i class="fa fa-trash-o icon"></i>Remove Complete</button>
+        </div>
+      </form>
+      <ul class="todoList">
+        <li class="task" data-ng-repeat="todo in todos track by $index" info="todos[$index]">
+          <input type="checkbox" class="check" ng-model="todo.complete">
+          <edit-in-place value="todo.task"></edit-in-place>{{updateComplete()}}
+          <a href="#/pomodoros/{{todo.url}}">
+            <button class="pomodoros">{{todo.pomodoros.length}} pomodoros</button>
+          </a>
+        </li>
+      </ul>
+      <table>
+        <tr>
+          <td><span id="colors">* Double click task above to edit</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
